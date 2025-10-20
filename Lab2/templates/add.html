@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавление сотрудника</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Добавить Сотрудника</h1>
+        <form method="POST" class="card p-4">
+            <div class="mb-3">
+                <label class="form-label">Тип Сотрудника:</label>
+                <select name="emp_type" id="emp_type" class="form-select">
+                    <option value="Employee">Employee</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Director">Director</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Имя:</label>
+                <input type="text" name="name" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Возраст:</label>
+                <input type="number" name="age" class="form-control">
+            </div>
+            <div class="mb-3" id="department_field" style="display: none;">
+                <label class="form-label">Отдел:</label>
+                <input type="text" name="department" class="form-control">
+            </div>
+            <div class="mb-3" id="title_field" style="display: none;">
+                <label class="form-label">Должность:</label>
+                <input type="text" name="title" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Добавить</button>
+        </form>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary mt-3">Назад</a>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!-- Custom JS for showing/hiding fields -->
+    <script>
+        document.getElementById('emp_type').addEventListener('change', function() {
+            var type = this.value;
+            var departmentField = document.getElementById('department_field');
+            var titleField = document.getElementById('title_field');
+            
+            departmentField.style.display = 'none';
+            titleField.style.display = 'none';
+            
+            if (type === 'Manager') {
+                departmentField.style.display = 'block';
+            } else if (type === 'Director') {
+                titleField.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

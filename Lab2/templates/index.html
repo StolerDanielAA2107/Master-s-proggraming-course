@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Лаба 2 Столер</h1>
+        <div class="list-group">
+            <a href="{{ url_for('add_employee') }}" class="list-group-item list-group-item-action">Добавить Сотрудника</a>
+            <a href="{{ url_for('employee_list') }}" class="list-group-item list-group-item-action">Список Сотрудников</a>
+            <a href="{{ url_for('save_to_file') }}" class="list-group-item list-group-item-action">Сохранить в Файл</a>
+            <a href="{{ url_for('load_from_file') }}" class="list-group-item list-group-item-action">Загрузить из Файла</a>
+            <a href="{{ url_for('clear_list') }}" class="list-group-item list-group-item-action">Очистить Список</a>
+        </div>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="alert alert-info mt-3">
+                    {% for message in messages %}
+                        {{ message }}<br>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

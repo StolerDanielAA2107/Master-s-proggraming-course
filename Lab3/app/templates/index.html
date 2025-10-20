@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+    <h1 class="text-center mb-4">Лаба 3 Столер</h1>
+    <div class="list-group">
+        <a href="{{ url_for('add_employee') }}" class="list-group-item list-group-item-action">Добавить Сотрудника</a>
+        <a href="{{ url_for('employee_list') }}" class="list-group-item list-group-item-action">Список Сотрудников</a>
+        <a href="{{ url_for('save_to_file') }}" class="list-group-item list-group-item-action">Сохранить в Файл</a>
+        <a href="{{ url_for('load_from_file') }}" class="list-group-item list-group-item-action">Загрузить из Файла</a>
+        <a href="{{ url_for('clear_list') }}" class="list-group-item list-group-item-action">Очистить Список</a>
+    </div>
+    
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="alert alert-info mt-3">
+                {% for message in messages %}
+                    {{ message }}<br>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+{% endblock %}

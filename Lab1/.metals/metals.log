@@ -1,0 +1,14 @@
+2025.09.11 14:39:21 WARN  no build tool detected in workspace '/Users/danielstoler/Documents/универ_магистратура/Современные технологии программирования/Lab1_Stoler_23'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2025.09.11 14:39:20 WARN  Build server is not auto-connectable.
+2025.09.11 14:39:21 WARN  no build tool detected in workspace '/Users/danielstoler/Documents/универ_магистратура/Современные технологии программирования/Lab1_Stoler_23'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2025.09.11 14:39:21 WARN  Build server is not auto-connectable.
+2025.09.11 14:39:59 WARN  Build server is not auto-connectable.
+2025.09.11 14:41:35 INFO  
+2025.09.11 14:41:35 INFO  Template applied in /Users/danielstoler/Documents/универ_магистратура/Распределенные и многопроцессорные вычислительные системы в нефтегазовой отрасли/ЛР0/./hello-world
+2025.09.11 14:41:35 INFO  
+2025.09.11 14:41:35 INFO  time: ran 'giter8.Giter8' in 2.23s
+сент. 11, 2025 2:41:40 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2025.09.11 14:45:39 INFO  Shutting down server
+2025.09.11 14:45:39 INFO  shutting down Metals
+2025.09.11 14:45:39 INFO  Exiting server
